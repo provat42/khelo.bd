@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Free Fire Top-Up</title>
+  <style>
+    body {
+      background: black;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      padding: 20px;
+    }
+    h1 {
+      color: #ffcc00;
+    }
+    .package {
+      background: #222;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 8px;
+    }
+    .package h3 {
+      margin-bottom: 5px;
+    }
+    .order-btn {
+      background-color: #ff6600;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .order-btn:hover {
+      background-color: #e65c00;
+    }
+  </style>
+</head>
+<body>
+
+<h1 id="game-name">Game Top-Up</h1>
+
+<div class="package">
+  <h3>115 Diamonds</h3>
+  <p>৳80</p>
+  <button class="order-btn" onclick="order('115 Diamonds')">Order Now</button>
+</div>
+
+<div class="package">
+  <h3>240 Diamonds</h3>
+  <p>৳160</p>
+  <button class="order-btn" onclick="order('240 Diamonds')">Order Now</button>
+</div>
+
+<div class="package">
+  <h3>610 Diamonds</h3>
+  <p>৳405</p>
+  <button class="order-btn" onclick="order('610 Diamonds')">Order Now</button>
+</div>
+
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const game = urlParams.get("game") || "Game";
+  document.getElementById("game-name").textContent = `${game} Top-Up`;
+
+  function getPrice(packageName) {
+    switch(packageName) {
+      case '115 Diamonds': return '80';
+      case '240 Diamonds': return '160';
+      case '610 Diamonds': return '405';
+      default: return '';
+    }
+  }
+
+  function order(packageName) {
+    const packageText = `${packageName} - ৳${getPrice(packageName)}`;
+    window.location.href = `topup-order.html?game=${encodeURIComponent(packageText)}`;
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Khelo BD - Best Game Store for GTA V and More</title>
+  
+  <meta name="description" content="Khelo BD is your go-to online game store for popular games like GTA V at affordable prices. Buy, top-up, and support your favorite games today!" />
+  
+  <meta name="keywords" content="GTA V, online game store, game top-up, Khelo BD, buy games online, gaming store Bangladesh" />
+  
+  <meta name="author" content="Khelo BD Team" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="Khelo BD - Best Game Store for GTA V and More" />
+  <meta property="og:description" content="Khelo BD is your go-to online game store for popular games like GTA V at affordable prices. Buy, top-up, and support your favorite games today!" />
+  <meta property="og:image" content="https://yourwebsite.com/path-to-your-image/gta-5-main-characters-e4rzrndhs77vx1ro.webp" />
+  <meta property="og:url" content="https://yourwebsite.com/" />
+  <meta property="og:type" content="website" />
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: url('bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: rgb(255, 255, 255);
+    }
+    header {
+      background-color: rgba(0, 0, 0, 0.85);
+      padding: 15px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    .logo img {
+      height: 40px;
+      margin-right: 10px;
+    }
+    nav a {
+      margin-left: 20px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #ffcc00;
+    }
+    nav a[aria-current="page"] {
+      text-decoration: underline;
+    }
+    .game-holder {
+      max-width: 900px;
+      margin: 60px auto;
+      background-color: rgba(0, 0, 0, 0.8);
+      border-radius: 10px;
+      padding: 30px;
+      text-align: center;
+    }
+    .game-holder img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .game-holder h2 {
+      margin: 20px 0 10px;
+    }
+    .price {
+      color: #00ff00;
+      font-size: 22px;
+      margin: 10px 0;
+    }
+    .buy-btn {
+      background-color: #ff0000;
+      border: none;
+      color: rgb(255, 255, 255);
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .buy-btn:hover {
+      background-color: #e65c00;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <img src="online-shopping.png" alt="Khelo BD Logo" />
+    <h2>Khelo BD</h2>
+  </div>
+  <nav>
+    <a href="index.html" aria-current="page">Home</a>
+    <a href="support.html">Support</a>
+    <a href="topup.html">Top-Up</a>
+  </nav>
+</header>
+
+<div class="game-holder">
+  <img src="gta-5-main-characters-e4rzrndhs77vx1ro.webp" alt="GTA V Game Cover" width="auto" height="auto" />
+  <h2>GTA V</h2>
+  <p class="price">৳400</p>
+  <button class="buy-btn" disabled onclick="buyGame('GTA V')">Sold Out</button>
+</div>
+
+<script>
+  function buyGame(gameName) {
+    const url = `order.html?game=${encodeURIComponent(gameName)}`;
+    window.location.href = url;
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Free Fire Top-Up - Khelo BD</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: url('4562472.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+    header {
+      background-color: rgba(0, 0, 0, 0.85);
+      padding: 15px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    .logo img {
+      height: 40px;
+      margin-right: 10px;
+    }
+    nav a {
+      margin-left: 20px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #ffcc00;
+    }
+    .form-container {
+      max-width: 600px;
+      margin: 60px auto;
+      background-color: rgba(32, 24, 24, 0.85);
+      padding: 30px;
+      border-radius: 10px;
+    }
+    input, select {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 6px;
+    }
+    button {
+      background-color: #ff6600;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #e65c00;
+    }
+    .payment-info {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+      gap: 10px;
+      font-size: 18px;
+      color: #ffcc00;
+      font-weight: bold;
+    }
+    .payment-info img {
+      height: 30px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <img src="online-shopping.png" alt="Logo" />
+    <h2>Khelo BD</h2>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="support.html">Support</a>
+  </nav>
+</header>
+
+<div class="form-container">
+  <h2>Free Fire Top-Up</h2>
+  <form action="https://formspree.io/f/xqaqlqyz" method="POST">
+    
+    <input type="text" name="uid" placeholder="Free Fire UID" required />
+
+    <select name="diamond_package" required>
+      <option value="">Select Diamond Package</option>
+      <option value="115 Diamonds - ৳80">115 Diamonds - ৳80</option>
+      <option value="240 Diamonds - ৳160">240 Diamonds - ৳160</option>
+      <option value="610 Diamonds - ৳405">610 Diamonds - ৳405</option>
+      <option value="100 Diamonds - ৳100">100 Diamonds - ৳100</option>
+      <option value="210 Diamonds - ৳200">210 Diamonds - ৳200</option>
+      <option value="530 Diamonds - ৳500">530 Diamonds - ৳500</option>
+      <option value="1080 Diamonds - ৳1000">1080 Diamonds - ৳1000</option>
+    </select>
+
+    <input type="text" name="payment" placeholder="Your Bkash/Nagad Number" required />
+
+    <div class="payment-info">
+      <img src="Bkcash.png" alt="Bkash Logo" />
+      <span>Bkash Number: 01918070313</span>
+    </div>
+
+    <button type="submit">Place Order</button>
+  </form>
+</div>
+
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const gamePackage = urlParams.get("game") || "";
+
+  if (gamePackage) {
+    document.querySelector('h2').textContent = `Order: ${gamePackage}`;
+    const select = document.querySelector('select[name="diamond_package"]');
+    for (let option of select.options) {
+      if (option.value === gamePackage) {
+        option.selected = true;
+        break;
+      }
+    }
+  }
+</script>
+
+</body>
+</html>
